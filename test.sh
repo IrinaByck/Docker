@@ -36,6 +36,7 @@ runPostgres() {
 runBackend() {
   docker run -d \
       --name backend \
+      -e SPRING_PROFILES_ACTIVE=docker \
       -p 8080:8080 \
       --network=network-backend \
       backend:v1.0
